@@ -22,7 +22,26 @@ export default defineConfig({
     ['meta', { property: 'og:description', content: '面白法人カヤック採用サイト' }],
     ['script', {}, 'window.difyChatbotConfig = { token: "5EhTvLU7SYJQYlpT", inputs: {}, systemVariables: {}, userVariables: {} };'],
     ['script', { src: 'https://udify.app/embed.min.js', id: '5EhTvLU7SYJQYlpT', defer: '' }],
-    ['style', {}, '#dify-chatbot-bubble-button { background-color: #1C64F2 !important; } #dify-chatbot-bubble-window { width: 24rem !important; height: 40rem !important; }'],
+    ['style', {}, `
+      /* Difyチャットボットのスタイル調整 */
+      #dify-chatbot-bubble-button {
+        background-color: #1C64F2 !important;
+      }
+      #dify-chatbot-bubble-window {
+        width: 24rem !important;
+        height: 40rem !important;
+        position: fixed !important;
+        bottom: 5rem !important;
+        right: 1rem !important;
+      }
+      /* ダークモードボタンを右揃え */
+      .VPNavBar .VPSwitch {
+        margin-left: auto !important;
+      }
+      .VPNavBar .content-body {
+        justify-content: flex-end !important;
+      }
+    `],
   ],
 
   // サイドバー設定
