@@ -26,17 +26,20 @@ export default defineConfig({
       /* Difyチャットボットのスタイル調整 */
       #dify-chatbot-bubble-button {
         background-color: #1C64F2 !important;
+        bottom: 1rem !important;
+        right: 1rem !important;
       }
       #dify-chatbot-bubble-window {
         width: 24rem !important;
         height: 40rem !important;
         position: fixed !important;
-        bottom: 5rem !important;
+        bottom: 1rem !important;
         right: 1rem !important;
       }
-      /* ダークモードボタンを右揃え */
+      /* ダークモードボタンを右上に配置 */
       .VPNavBar .VPSwitch {
         margin-left: auto !important;
+        margin-right: 1.5rem !important;
       }
       .VPNavBar .content-body {
         justify-content: flex-end !important;
