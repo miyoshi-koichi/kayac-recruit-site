@@ -49,6 +49,9 @@ export default defineConfig({
 
   // サイドバー設定
   themeConfig: {
+    // ダークモードボタンを非表示
+    colorModeSwitch: false,
+
     sidebar: [
       {
         text: 'ホーム',
