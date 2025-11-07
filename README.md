@@ -119,6 +119,18 @@ git push origin main  # GitHub Actionsが自動デプロイ
 
 サイト上で右下のAIチャットボタンから24時間質問可能。
 
+## 🔄 Claude Codeで作業を再開する方法
+
+新しいClaude Codeセッションで以下をコピペして質問してください：
+
+```
+カヤック採用サイトの続きを進めたいです。
+プロジェクトは /Users/miyoshi-koichi/worktree/kayac-recruit-site にあります。
+現在の状態を確認して、次のタスクを教えてください。
+```
+
+Claude CodeがこのREADME.mdを読み込み、状況を把握して作業を継続できます。
+
 ## 📌 メモ
 
 - **原稿の扱い**: `master/Information.md`は既にサイトに反映済み。要約・構造化してページ化。
