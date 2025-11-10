@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.vuejs.org/config/app-configs
 export default defineConfig({
-  title: 'Kayac Recruit',
-  description: '面白法人カヤック採用サイト',
+  title: '採用サイト｜面白法人カヤック',
+  description: '面白法人カヤックは、「つくる人を増やす」を経営理念に掲げ、古都鎌倉から、ゲーム制作・広告企画・地域通貨、関係人口促進など、固定観念にとらわれない発想力・企画力で面白いサービスやコンテンツを提供するクリエイター集団です。',
 
   // GitHub Pagesのベースパス（リポジトリ名に合わせて変更してください）
   base: '/kayac-recruit-site/',
@@ -16,13 +16,38 @@ export default defineConfig({
 
   // メタタグ（AI可読性向上）
   head: [
+    // Favicon
+    ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+
+    // 基本メタタグ
     ['meta', { name: 'keywords', content: 'カヤック,採用,リクルート,Kayac' }],
+
+    // OGP設定
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: 'Kayac Recruit' }],
-    ['meta', { property: 'og:description', content: '面白法人カヤック採用サイト' }],
+    ['meta', { property: 'og:site_name', content: 'Kayac Recruit' }],
+    ['meta', { property: 'og:title', content: '採用サイト｜面白法人カヤック' }],
+    ['meta', { property: 'og:description', content: '面白法人カヤックは、「つくる人を増やす」を経営理念に掲げ、古都鎌倉から、ゲーム制作・広告企画・地域通貨、関係人口促進など、固定観念にとらわれない発想力・企画力で面白いサービスやコンテンツを提供するクリエイター集団です。' }],
+    ['meta', { property: 'og:url', content: 'https://recruit.kayac.com/' }],
+    ['meta', { property: 'og:image', content: 'https://recruit.kayac.com/images/ogp.jpg' }],
+    ['meta', { property: 'og:image:width', content: '1200' }],
+    ['meta', { property: 'og:image:height', content: '630' }],
+
+    // Twitter Card設定
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:title', content: '採用サイト｜面白法人カヤック' }],
+    ['meta', { name: 'twitter:description', content: '面白法人カヤックは、「つくる人を増やす」を経営理念に掲げ、古都鎌倉から、ゲーム制作・広告企画・地域通貨、関係人口促進など、固定観念にとらわれない発想力・企画力で面白いサービスやコンテンツを提供するクリエイター集団です。' }],
+    ['meta', { name: 'twitter:image', content: 'https://recruit.kayac.com/images/ogp.jpg' }],
+
+    // Difyチャットボット
     ['script', {}, 'window.difyChatbotConfig = { token: "5EhTvLU7SYJQYlpT", inputs: {}, systemVariables: {}, userVariables: {} };'],
     ['script', { src: 'https://udify.app/embed.min.js', id: '5EhTvLU7SYJQYlpT', defer: '' }],
     ['style', {}, `
+      /* ロゴサイズ調整 */
+      .VPNavBarTitle .logo {
+        width: auto !important;
+        height: 36px !important;
+      }
+
       /* Difyチャットボットのスタイル調整 */
       #dify-chatbot-bubble-button {
         background-color: #1C64F2 !important;
@@ -52,6 +77,10 @@ export default defineConfig({
 
   // サイドバー設定
   themeConfig: {
+    // ロゴ設定（ロゴのみ表示、テキストは非表示）
+    logo: '/images/logo.png',
+    siteTitle: false,
+
     sidebar: [
       {
         text: 'ホーム',
