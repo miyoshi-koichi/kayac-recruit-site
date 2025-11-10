@@ -26,14 +26,14 @@ export default defineConfig({
       /* Difyチャットボットのスタイル調整 */
       #dify-chatbot-bubble-button {
         background-color: #1C64F2 !important;
-        bottom: 1rem !important;
+        bottom: 5rem !important;
         right: 1rem !important;
       }
       #dify-chatbot-bubble-window {
         width: 24rem !important;
         height: 40rem !important;
         position: fixed !important;
-        bottom: 1rem !important;
+        bottom: 5rem !important;
         right: 1rem !important;
       }
       /* ダークモードボタンを右上に配置 */
