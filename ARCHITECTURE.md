@@ -14,7 +14,12 @@ kayac-recruit-site/
 ├── .gitignore                         # Git管理除外設定
 ├── docs/                              # VitePressコンテンツルート
 │   ├── .vitepress/
-│   │   └── config.ts                  # VitePress設定（サイト構成、ナビゲーション、Dify統合）
+│   │   └── config.ts                  # VitePress設定（サイト構成、ナビゲーション、Dify統合、OGP設定）
+│   ├── public/                        # 静的アセット
+│   │   ├── favicon.ico                # サイトアイコン
+│   │   └── images/
+│   │       ├── logo.png               # ヘッダーロゴ（47px高さ）
+│   │       └── ogp.jpg                # OGP画像（1200x630px）
 │   ├── index.md                       # トップページ
 │   ├── about.md                       # 組織紹介
 │   ├── culture.md                     # 企業文化
@@ -60,9 +65,18 @@ kayac-recruit-site/
 
 #### 基本設定
 ```typescript
+title: '面白法人カヤック 採用サイト｜バグってるくらいが、ちょうどいい。'
+titleTemplate: ':title'        // ページタイトルのみ表示（サイトタイトルを非表示）
 base: '/kayac-recruit-site/'  // GitHub Pagesのベースパス
 appearance: false              // ダークモード無効化
 ```
+
+#### メタタグ設定
+- **Favicon**: `/favicon.ico`
+- **OGP（Open Graph Protocol）**:
+  - タイトル、ディスクリプション、URL、画像（1200x630px）
+  - サイト名: "Kayac Recruit"
+- **Twitter Card**: summary_large_image形式
 
 #### ナビゲーション構成
 - **右上ナビゲーション**: 削除済み
@@ -71,11 +85,14 @@ appearance: false              // ダークモード無効化
   - 組織紹介（about, culture, office）
   - 事業紹介（business系4ページ）
   - 採用情報（jobs, process, faq）
+- **ヘッダーロゴ**: logo.png（47px高さ、siteTitle非表示）
 
 #### Difyチャットボット統合
 - `head`セクションにスクリプトとスタイルを追加
 - `position: fixed` でスクロール追従
-- 右下配置（`bottom: 20px; right: 20px`）
+- 右下配置（`bottom: 1rem; right: 1rem`）
+- **重要**: `defer: ''` (空文字列) を使用（VitePressの正しい形式）
+- ローカル環境では表示されず、GitHub Pagesでのみ動作
 
 ## データフロー
 
@@ -153,10 +170,11 @@ npm install
 - リポジトリ名と一致させる（例: `/kayac-recruit-site/`）
 
 #### 3. Difyチャットボットが表示されない
-**原因**: スクリプトのロードエラー
+**原因**: ローカル環境で確認している
 **解決方法**:
-- ブラウザのコンソールでエラー確認
-- `config.ts` の `head` セクションを確認
+- Difyはローカル環境（localhost）では表示されない
+- GitHub Pages（本番環境）で確認する
+- `defer: ''` （空文字列）を使用していることを確認（`defer: 'defer'` は誤り）
 
 #### 4. ダークモードが表示される
 **原因**: `appearance` 設定の誤り
@@ -186,9 +204,9 @@ npm run serve   # ビルド結果をローカルでプレビュー
 ## 今後の拡張予定
 
 ### 優先度: 高
-- OGP（Open Graph Protocol）設定の充実
-- ロゴ画像への変更（現在はテキスト）
-- Favicon追加
+- ✅ OGP（Open Graph Protocol）設定の充実（完了）
+- ✅ ロゴ画像への変更（完了）
+- ✅ Favicon追加（完了）
 
 ### 優先度: 中
 - 募集要項（jobs.md）の内容追加

@@ -71,7 +71,8 @@ npm install
 **解決方法**: `docs/.vitepress/config.ts` で `base: '/kayac-recruit-site/'` を確認
 
 ### よくある問題3: Difyチャットボットが表示されない
-**解決方法**: ブラウザのコンソールでエラーを確認し、`config.ts` の `head` セクションのスクリプトURLを確認
+**原因**: ローカル環境（localhost）では表示されない仕様
+**解決方法**: GitHub Pages（https://miyoshi-koichi.github.io/kayac-recruit-site/）で確認
 
 ## 開発者向け情報
 
